@@ -16,6 +16,18 @@ import EventBannerCarousel from "@/components/EventBannerCarousel"
 import EducationStats from "@/components/education-stats"
 import WhyGeniusLabs from "@/components/why-geniuslabs";
 import FAQComponent from "@/components/FAQComponent"
+import StemInfographic from "@/components/stem-infographic";
+import STEMCarousel from "@/components/stem-carousel"
+import ExploreProject, { type ProjectItem } from "@/components/explore-project"
+import  Slider  from "@/components/Slider"
+import Steps from "@/components/step";
+import GeniuslabBlog from "@/components/geniuslab-blog"
+import TrainingNinjasCarousel from "@/components/training-ninjas-carousel";
+import StemStreams from "@/components/stem-streams"
+import RoboticsCurriculum from "@/components/robotics-curriculum";
+import RoboticsMissions from "@/components/robotics-missions"
+import ExploreItem from "@/components/explorefaqs"
+
 
 interface Workshop {
   _id: string; // Unique identifier for the workshop
@@ -47,6 +59,45 @@ export default function Page() {
   const [isLoading, setIsLoading] = useState(true);
   const [isFooterVisible, setIsFooterVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+
+  const projectsData: ProjectItem[] = [
+    {
+      id: 1,
+      name: "Simran Kapoor",
+      role: "All-Rounder STEM Expert",
+      image: "/placeholder.svg?height=400&width=300",
+      accentColor: "#00b2ff", // Blue accent
+      linkText: "Learn More",
+      linkUrl: "/experts/simran-kapoor",
+    },
+    {
+      id: 2,
+      name: "Sushant Yadav",
+      role: "All-Rounder STEM Expert",
+      image: "/placeholder.svg?height=400&width=300",
+      accentColor: "#ee728f", // Pink accent
+      linkText: "Learn More",
+      linkUrl: "/experts/sushant-yadav",
+    },
+    {
+      id: 3,
+      name: "Priya Sharma",
+      role: "Robotics Specialist",
+      image: "/placeholder.svg?height=400&width=300",
+      accentColor: "#00b2ff", // Blue accent
+      linkText: "Learn More",
+      linkUrl: "/experts/priya-sharma",
+    },
+    {
+      id: 4,
+      name: "Rahul Mehta",
+      role: "Computer Science Expert",
+      image: "/placeholder.svg?height=400&width=300",
+      accentColor: "#ee728f", // Pink accent
+      linkText: "Learn More",
+      linkUrl: "/experts/rahul-mehta",
+    },
+  ]
 
   const winners: Winner[] = [
     {
@@ -141,6 +192,30 @@ export default function Page() {
 
       <WhyGeniusLabs />
 
+      <StemInfographic />
+
+      <STEMCarousel />
+
+      <div className="relative my-4 py-6 rounded-lg" style={{ backgroundImage: 'url(/yellowbg.svg)', backgroundSize: 'cover', backgroundPosition: 'center'  ,backgroundRepeat: 'no-repeat' }}>
+        <ExploreProject title="Explore Projects" items={projectsData} />
+      </div>
+
+      <GeniuslabBlog />
+
+      <div className="relative my-4 py-6 rounded-lg" style={{ backgroundImage: 'url(/bluebg.svg)', backgroundSize: 'cover', backgroundPosition: 'center'  ,backgroundRepeat: 'no-repeat' }}>
+      <TrainingNinjasCarousel/>
+      </div>
+
+      <Slider />
+
+      <Steps />
+
+      <StemStreams />
+
+      <RoboticsCurriculum />
+
+      <RoboticsMissions />
+
       {/* Workshop Date Picker */}
       <div className="px-4 mt-6">
         <WorkshopDatePicker
@@ -178,6 +253,8 @@ export default function Page() {
       </div>
       
       <FAQComponent />
+
+      <ExploreItem />
 
       <Footerpage />
 

@@ -1,11 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://workshops.geniuslabs.live/sitemap
+# Host
+Host: http://localhost:3000
 
-# Disallow specific paths
-Disallow: /api/*
-
-# Disallow specific paths if needed
-# Disallow: /admin/ 
+# Sitemaps
+Sitemap: http://localhost:3000/sitemap.xml
